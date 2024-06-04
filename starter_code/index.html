@@ -8,21 +8,24 @@
 
   <!-- link the Font Awesome stylesheet - CDN -->
   <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet" />
+  <!-- Tailwind CSS framework -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- link your styles -->
   <link rel="stylesheet" href="./stylesheets/style.css" />
-
   <link rel="icon" type="image/x-icon" href="./images/slack-icon.png">
   <title>Slack is your digital HQ | Slack</title>
 </head>
 
-<body>
+<body class="bg-fuchsia-950">
   <!-- NAVBAR -->
-  <nav>
-    <div>
+  <!-- Tiene que ser un flex, donde los items estan centrados en el cross axis, los items estan separados y ademas tiene un padding  -->
+  <nav class="flex items-center p-4 justify-between">
+    <!-- Este DIV que pertenece al logo quiero que ocupe una tercera parte de todo el width disponible -->
+    <div class="w-4/12">
       <img src="./images/slack-logo.png" alt="Slack logo" />
 
-      <ul>
+      <ul class="hidden">
         <li>
           <a href="#">Product</a>
         </li>
@@ -38,7 +41,7 @@
       </ul>
     </div>
 
-    <div>
+    <div class="flex items-center space-x-4">
       <button>
         <img src="./images/icon-search.png" alt="Search icon">
       </button>
@@ -62,16 +65,20 @@
   <!-- HEADER -->
   <header>
     <div>
-      <h1>Great teamwork starts with a digital HQ</h1>
+      <!-- Texto en blanco, mucho más grande que los demás, con la fuente algo negrita y el texto centrado -->
+      <h1 class="text-5xl text-center text-white font-semibold">Great teamwork starts with a digital HQ</h1>
 
-      <p>Slack is free to try for as long as you'd like.</p>
+      <p class="text-white text-center mt-4"><span class="text-orange-400"> Slack is free to try </span> for as long as you'd like.</p>
 
-      <div>
-        <button>Sign up with email</button>
+      <!-- Este DIV tiene un margin top, y todos sus hijos estan separados un poco entre ellos space-y-2 -->
+      <div class="mt-3 space-y-2">
+        <!-- tiene un fondo blanco, un color texto fuchsia, esta en mayusuclas, negrita, quiero convertirlo en un elemento de tipo bloque (para que ocupe todo el ancho disponible), es posible que necesiteis la regla w-full, (width 100%), tiene algo de padding y tiene las esquinas redondeadas -->
+        <button class=" flex items-center justify-center p-3 bg-white text-fuchsia-950 uppercase font-semibold w-full h12 rounded">Sign up with email</button>
 
-        <button>
-          <img src="./images/logo-google.png" alt="Google logo" />
-          <span>Sign up with Google</span>
+        <!-- Este es complicadom se puede conseguir con posicionamiento relativo y absoluto-->
+        <button class="bg-blue-400 w-full h-12 flex items-center justify-center rounded relative">
+          <img src="./images/logo-google.png" alt="Google logo" class="w-8 p-1 bg-white rounded absolute left-2"/>
+          <span class="text-white uppercase font-bold">Sign up with Google</span>
         </button>
       </div>
 
@@ -82,7 +89,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="relative bottom-8">
     <section>
       <p>Trusted by companies all over the world</p>
 
@@ -138,7 +145,9 @@
 
   </main>
 
+  <!-- Intentad maquetar el Footer con tailwind -->
   <footer>
+    <!-- Para separar los elementos entre si usad space-y -->
     <ul>
       <li>Status</li>
       <li>Privacy</li>
@@ -151,6 +160,7 @@
 
     <hr>
 
+    <!-- es un flex, aplicadlo con tailwind -->
     <ul>
       <li>
         <i class="fab fa-twitter"></i>
